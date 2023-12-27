@@ -19,7 +19,6 @@ const Chatbot = () => {
     // Call GPT-4 API
     const response = await fetchResponse(input);
     setResponses([
-      ...responses,
       { role: "user", content: input },
       { role: "bot", content: response },
     ]);
@@ -37,7 +36,7 @@ const Chatbot = () => {
 
       const headers = {
         "Content-Type": "application/json",
-        Authorization: `Bearer API_KEY`,
+        Authorization: `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
       };
 
       const response = await axios.post(

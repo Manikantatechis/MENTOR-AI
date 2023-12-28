@@ -119,7 +119,7 @@ function App() {
               <img src={image} alt="" />
             </div>
             <div className="right">
-              <div className="name">Mentor AI</div>
+              <div className="name">Mentor</div>
               <div className="status">Active</div>
             </div>
           </div>

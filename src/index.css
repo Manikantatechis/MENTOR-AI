@@ -46,7 +46,7 @@
   width: 80% !important;
   padding: 15px;
   text-align: center;
-  background: #edeced;
+  background: #dcf5f5;
   font-style: 1.1em;
   border-radius: 10px;
   margin: 0 10px 0;
@@ -57,7 +57,7 @@
   width: 100%;
   padding: 15px;
   text-align: center;
-  background: #363062;
+  background: #00abad;
   color: #edeced;
   font-style: 1.1em;
   border-radius: 10px;
@@ -78,7 +78,7 @@
   padding-left: 36px;
   outline: none;
   border: none;
-  background: #edeced;
+  background: #dcf5f5;
   box-sizing: border-box;
   border-radius: 5px;
 }
@@ -131,12 +131,12 @@ body {
 
 .bot-message {
   background-color: #e9e9ff; /* A light blue background for bot messages */
-  border-left: 3px solid #5555ff; /* A darker blue border on the left */
+
 }
 
 .human-message {
   background-color: #e9ffe9; /* A light green background for human messages */
-  border-left: 3px solid #55ff55; /* A darker green border on the left */
+
   text-align: right;
 }
 

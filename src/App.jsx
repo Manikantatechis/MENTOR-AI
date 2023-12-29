@@ -1,5 +1,5 @@
 import "./App.css";
-import image from "./img/bot.webp";
+import image from "./img/bot.png";
 import { useState, useRef } from "react";
 import axios from 'axios'; // If you're using Axios
 import DOMPurify from 'dompurify';
@@ -7,6 +7,7 @@ import DOMPurify from 'dompurify';
 
 
 function App() {
+  const [displayVal, setDisplayVal] = useState("none")
   const humanMessage = useRef();
   const botmessage = useRef();
   const input = useRef();
@@ -69,6 +70,7 @@ function App() {
   const handleInput = async () => {
     // Get the user's message from the input ref
     const userMessage = input.current.value;
+    setDisplayVal("block")
     humanMessage.current.innerText = userMessage
     // Set the bot message to 'Typing...' immediately
     botmessage.current.innerText = "Typing...";
@@ -133,6 +135,7 @@ function App() {
                   ref={botmessage}
                 >Hello how can i help you</div>
                 <div
+                style={{display:displayVal}}
                   className="human-message"
                   id="message2"
                   ref={humanMessage}

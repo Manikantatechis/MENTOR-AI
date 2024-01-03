@@ -1,30 +1,3 @@
-// import React, { useState } from 'react';
-// import Header from './components/Header';
-// import MessageList from './components/MessageList';
-// import InputArea from './components/InputArea';
-// import './App.css';
-
-// function App() {
-//   const [messages, setMessages] = useState([]);
-//   const [botOpen, setBotOpen] = useState(true);  // Controls the visibility of the chatbot
-
-//   const addMessage = (sender, text) => {
-//     setMessages([...messages, { sender, text }]);
-//   };
-
-//   return (
-//     <div className="wrapper" style={{ display: botOpen ? 'block' : 'none' }}>
-//       <Header setBotOpen={setBotOpen} />
-//       <MessageList messages={messages} />
-//       <InputArea addMessage={addMessage} />
-//     </div>
-//   );
-// }
-
-// export default App;
-
-
-
 import "./App.css";
 import { useState, useRef } from "react";
 import axios from "axios"; // If you're using Axios
@@ -254,4 +227,3 @@ function convertToHTML(text) {
 
   return htmlLines.join("");
 }
-

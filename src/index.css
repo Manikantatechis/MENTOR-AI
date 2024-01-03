@@ -215,3 +215,11 @@ h2 {
 .btm .input{
   width: 100%;
 }
+
+
+img.close-icon{
+  width: 50px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}

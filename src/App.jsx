@@ -77,7 +77,7 @@ function App() {
   
     // Define the data payload for the API request
     const data = {
-      model: " ",
+      model: "gpt-3.5-turbo-1106",
       messages: [{ role: "user", content: userMessage }],
       temperature: 0.7, // Adjust based on how deterministic you want the responses
       max_tokens: 150,

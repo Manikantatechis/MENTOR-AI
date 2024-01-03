@@ -1,5 +1,5 @@
 import "./App.css";
-import image from "./img/bot.png";
+import image from "./assets/img/bot.png";
 import { useState, useRef } from "react";
 import axios from 'axios'; // If you're using Axios
 import DOMPurify from 'dompurify';
@@ -77,7 +77,7 @@ function App() {
   
     // Define the data payload for the API request
     const data = {
-      model: "gpt-3.5-turbo-1106",
+      model: " ",
       messages: [{ role: "user", content: userMessage }],
       temperature: 0.7, // Adjust based on how deterministic you want the responses
       max_tokens: 150,
@@ -151,6 +151,12 @@ function App() {
                   id="input"
                   placeholder="Enter your message"
                   ref={input}
+                  onKeyDown={(e)=>{
+                    console.log(e)
+                    if(e.key === "Enter"){
+                      handleInput()
+                    }
+                    }}
                 />
               </div>
               <div className="btn">
@@ -183,18 +189,14 @@ function convertToHTML(text) {
     const orderedListItem = line.trim().match(/^(\d+\.)\s(.*)/);
     if (orderedListItem) {
       if (!isOrderedList) {
-        htmlLines.push('<ol>');
+        htmlLines.push('<li>');
         isOrderedList = true;
       }
       // Replace inline code within the list item
       const contentWithCode = orderedListItem[2].replace(/`([^`]+)`/g, '<code>$1</code>');
       htmlLines.push(`<li>${contentWithCode}</li>`);
     } else {
-      if (isOrderedList) {
-        htmlLines.push('</ol>');
-        isOrderedList = false;
-      }
-      // Handle inline code outside of lists
+      
       if (!isCodeBlock) {
         line = line.replace(/`([^`]+)`/g, '<code>$1</code>');
         htmlLines.push(`<p>${line}</p>`);
@@ -219,7 +221,7 @@ function convertToHTML(text) {
     htmlLines.push('</code></pre>');
   }
   if (isOrderedList) {
-    htmlLines.push('</ol>');
+    htmlLines.push('</li>');
   }
 
   return htmlLines.join('');

@@ -1,6 +1,8 @@
 .wrapper {
   width: 30%;
-  max-height: 40vh;
+  min-width: 300px;
+  max-height: 50vh;
+  overflow: scroll;
   position: absolute;
   bottom: 20px;
   right: 20px;
@@ -71,6 +73,7 @@
 .wrapper .content .bottom .btm {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .wrapper .content .bottom .btm .input input {
   width: 100%;
@@ -91,7 +94,7 @@
   border: none;
   outline: none;
   border-radius: 5px;
-  background: #363062;
+  background: #00abae;
   color: #fff;
   font-weight: 600;
   cursor: pointer;
@@ -157,9 +160,9 @@ pre code {
   padding: 10px;
   background: black;
   color: white;
-  white-space: nowrap;
   overflow: scroll !important;
   font-family: monospace;
+  line-height: 3.5;
 }
 
 /* pre code {
@@ -206,4 +209,9 @@ h6 {
 h2 {
   border-bottom: 1px solid #eee;
   padding-bottom: 0.5em;
+}
+
+
+.btm .input{
+  width: 100%;
 }

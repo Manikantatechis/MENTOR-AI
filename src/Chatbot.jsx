@@ -63,6 +63,7 @@ const Chatbot = () => {
             value={input}
             onChange={handleInputChange}
             className="chat-input"
+            onKeyDown={handleSubmit}
           />
           <button
             type="submit"

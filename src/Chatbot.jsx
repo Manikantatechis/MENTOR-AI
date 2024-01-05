@@ -23,16 +23,14 @@
 
 // export default App;
 
-
-
 import "./App.css";
 import { useState, useRef } from "react";
 import axios from "axios"; // If you're using Axios
 import DOMPurify from "dompurify";
-import close from "./assets/img/close.svg"
+import close from "./assets/img/close.svg";
 
-function App({setBotOpen}) {
-  const [displayVal, setDisplayVal] = useState("none");
+function App({ setBotOpen }) {
+  const [displayVal, setDisplayVal] = useState(false);
   const humanMessage = useRef();
   const botmessage = useRef();
   const input = useRef();
@@ -94,7 +92,7 @@ function App({setBotOpen}) {
   const handleInput = async () => {
     // Get the user's message from the input ref
     const userMessage = input.current.value;
-    setDisplayVal("block");
+    setDisplayVal(true);
     humanMessage.current.innerText = userMessage;
     // Set the bot message to 'Typing...' immediately
     botmessage.current.innerText = "Typing...";
@@ -104,7 +102,7 @@ function App({setBotOpen}) {
       model: "gpt-3.5-turbo-1106",
       messages: [{ role: "user", content: userMessage }],
       temperature: 0.7, // Adjust based on how deterministic you want the responses
-      max_tokens: 150,
+      max_tokens: 1500,
     };
 
     // Define the headers for the API request
@@ -139,35 +137,46 @@ function App({setBotOpen}) {
     input.current.value = "";
   };
 
-
-
   return (
-    <div  onLoad={checkStatus}>
-      <div className="wrapper" style={{transition:"transform 167ms cubic-bezier(0.33, 0, 0, 1)"}}>
+    <div onLoad={checkStatus}>
+      <div
+        className="wrapper"
+        style={{ transition: "transform 167ms cubic-bezier(0.33, 0, 0, 1)" }}
+      >
         <div className="content">
           <div className="header">
             <div className="img">
-              <img  src="https://techis.io/assets/img/icon-techis.png" alt="" />
+              <img src="https://techis.io/assets/img/icon-techis.png" alt="" />
             </div>
             <div className="right">
               <div className="name">Tech IS Mentor</div>
               <div className="status">Active</div>
             </div>
-            <img className="close-icon" src={close} onClick={()=>setBotOpen(false)} alt="" />
+            <img
+              className="close-icon"
+              src={close}
+              onClick={() => setBotOpen(false)}
+              alt=""
+            />
           </div>
           <div className="main">
             <div className="main_content">
               <div className="messages">
-                <div className="bot-message" id="message1" ref={botmessage}>
-                  Hello how can i help you
+                <div
+                  className="bot-message"
+                  style={{ textAlign: "justify" }}
+                  id="message1"
+                  ref={botmessage}
+                >
+                  I am your TECH I.S Mentor. <br />
+                  Please feel free to ask me anything about coding.
                 </div>
                 <div
-                  style={{ display: displayVal }}
+                  style={{ display: displayVal? "block":"none",  textAlign: "justify" }}
                   className="human-message"
                   id="message2"
                   ref={humanMessage}
                 >
-                  N/A
                 </div>
               </div>
             </div>
@@ -254,4 +263,3 @@ function convertToHTML(text) {
 
   return htmlLines.join("");
 }
-

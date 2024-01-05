@@ -22,8 +22,8 @@
   width: 65px;
   max-height: 65px;
   height: 65px;
-  border-radius: 50%;
-  background: #00abae;
+  /* border-radius: 50%; */
+  /* background: #00abae; */
   cursor: pointer;
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.06), 0 2px 32px 0 rgba(0, 0, 0, 0.16);
   transition: transform 167ms cubic-bezier(0.33, 0, 0, 1);
@@ -46,12 +46,5 @@
 }
 
 .bot-closed .chat-icon {
-  vertical-align: middle;
-  box-sizing: border-box;
-  padding: 15px;
-}
-
-.bot-closed .chat-path {
-  fill: rgb(0, 0, 0);
-  box-sizing: border-box;
+  width: 100%;
 }

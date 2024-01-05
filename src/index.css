@@ -145,33 +145,25 @@ body {
 
 pre {
   font-size: smaller;
+  padding: 20px;
+  background-color:black ;
 }
 
 pre code {
   width: 100%;
   font-family: Monaco, monospace;
   line-height: 100%;
-  background-color: #eee;
   padding: 0.2em;
   letter-spacing: -0.05em;
   word-break: normal;
-  border-radius: 5px;
-  border: 1px solid #ccc;
   padding: 10px;
-  background: black;
+  background: none;
   color: white;
   overflow: scroll !important;
   font-family: monospace;
-  line-height: 3.5;
+  line-height: 1.5;
 }
 
-/* pre code {
-  border: none;
-  background: none;
-  line-height: 1em;
-  letter-spacing: normal;
-  word-break: break-all;
-} */
 
 ol {
   counter-reset: list;
